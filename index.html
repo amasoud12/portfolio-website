@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website | Ahmad Masoud</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class= "logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>System Admin @ The 20 MSP | CS Grad Student</p>
+                <h1>Hello, I am <span>Ahmad Masoud</span><br>an aspiring Software Engineer</h1>
+            </div>
+        </div>
+    </div>
+    <!-- ------------About--------------/ -->
+    <div id="about">
+        <div class="container"></div>
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>🚀 Masters of CS student with a passion for Machine Learning | Bachelors in Cybersecurity | System Administrator<br>
+                    🎓 Currently pursuing a Masters degree in Computer Science with a specialization in Machine Learning, combining my love for technology and problem-solving skills to drive innovation in the field.<br>
+                    🔒 Hold a Bachelor's degree in Cybersecurity, equipping me with a solid foundation in protecting digital assets and ensuring data integrity.<br>
+                    💻 Actively engaged as a System Administrator, where I apply my technical expertise to maintain system efficiency, troubleshoot issues, and enhance cybersecurity measures.<br>
+                    🔍 Eager to explore opportunities where I can leverage my diverse background in AI, machine learning, and cybersecurity to contribute to cutting-edge projects and drive impactful solutions.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links"onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links"onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id='skills'>
+                        <ul>
+                            <li><span>Skill</span><br>description</li>
+                            <li><span>Skill</span><br>description</li>
+                            <li><span>Skill</span><br>description</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id='experience'>
+                        <ul>
+                            <li><span>Skill</span><br>description</li>
+                            <li><span>Skill</span><br>description</li>
+                            <li><span>Skill</span><br>description</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id='education'>
+                        <ul>
+                            <li><span>Skill</span><br>description</li>
+                            <li><span>Skill</span><br>description</li>
+                            <li><span>Skill</span><br>description</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- ------------Portfolio--------------/ -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work1.png">
+                    <div class="layer">
+                        <h3>Software Engineering</h3>
+                        <p>description</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work2.png">
+                    <div class="layer">
+                        <h3>System Administration</h3>
+                        <p>description</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work3.png">
+                    <div class="layer">
+                        <h3>Database Management</h3>
+                        <p>description</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!-- ------------Contact--------------/ -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> amasoud2001@yahoo.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i> +1 (469) 468-4729</p>
+                    <p>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <a class="social-link" href="https://www.linkedin.com/in/ahmad-masoud-4ab487175/" target="_blank">LinkedIn Profile</a>
+                      </p>
+                    <a href="images/ahmad-masoud-resume.pdf" download class="btn btn2">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Ahmad Masoud. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }  
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }  
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+
+    <script>
+
+        var sidemenu= document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right= "0";
+        }
+        function closemenu(){
+            sidemenu.style.right= "-200px";
+        }
+    
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwFKITyztGd93tULSuxlxaB-gxFPR9SGSBprx9X7Wps2WEXiZCMp8w2eS2AquBTUR7z/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+    
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Thank you for reaching out, your message was sent successfully!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+  </script>
+
+</body>
+</html>
